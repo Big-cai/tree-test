@@ -1,12 +1,13 @@
-import ReactDOM from "react-dom";
+import { createRoot } from "react-dom/client";
 import React from "react";
 import Icon from "./Icon";
 import Button from "./button";
 
-ReactDOM.render(
-    <div>
-        <Icon></Icon>
-        <Button></Button>  
-    </div>,
-    document.body
-)
+const container = document.getElementById("root") as HTMLElement;
+const root = createRoot(container);
+root.render(
+  <div>
+    <Icon></Icon>
+    <Button></Button>
+  </div>
+);

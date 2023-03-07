@@ -2,9 +2,12 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-    mode: 'production',
+    mode: 'development',
     entry: {
         index: './lib/index.tsx'
+    },
+    resolve: {  //文件扩展名需要添加ts
+        extensions: ['.ts','.tsx', '.js','.jsx'],
     },
     // 输出
     output: {
@@ -28,9 +31,22 @@ module.exports = {
             template: 'index.html'
         })
     ],
-    resolve: {  //文件扩展名需要添加ts
-        extensions: ['.tsx','.ts', '.js'],
-      },
+
+    // 告诉webpack 这是外部的
+    externals: {
+        react: {
+            commonjs: 'react',
+            commonjs2: 'react',
+            amd: 'react',
+            root: 'React'
+        },
+        'react-dom': {
+            commonjs: 'react-dom',
+            commonjs2: 'react-dom',
+            amd: 'react-dom',
+            root: 'ReactDOM'
+        }
+    },
     // 服务器配置
     devServer: {
         open: true, // 自动打开浏览器
