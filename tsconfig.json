@@ -1,21 +1,19 @@
 {
     "compilerOptions": {
-      "lib": [
-        "es6",
-        "dom",
-      ],
+      "lib": ["dom"],
       "target": "esnext",
       "module": "esnext",
-    //   "moduleResolution": "node",
+      "moduleResolution": "node",
       "importHelpers": true,
       "jsx": "react",
       "esModuleInterop": true,
       "sourceMap": true,
       "baseUrl": ".",
       "strict": true,
-    //   "types": ["node"],
+      "types": ["node"],
       "noImplicitAny": false,
       "noImplicitThis": false,
+      "removeComments": true,
       "skipLibCheck": true, //忽略库的默认声明文件的类型检查
       "allowSyntheticDefaultImports": true,
       //在ts4.4中，新增了将catch中的参数从any改为了unknown，还原到以前的配置

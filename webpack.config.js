@@ -1,4 +1,5 @@
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
     mode: 'production',
@@ -20,5 +21,19 @@ module.exports = {
                 loader: 'awesome-typescript-loader'
             }
         ]
+    },
+    plugins: [
+        new HtmlWebpackPlugin({
+            title: 'LUI',
+            template: 'index.html'
+        })
+    ],
+    resolve: {  //文件扩展名需要添加ts
+        extensions: ['.tsx','.ts', '.js'],
+      },
+    // 服务器配置
+    devServer: {
+        open: true, // 自动打开浏览器
+        port: 8080, // 热替换 外网访问
     }
 }
