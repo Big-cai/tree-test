@@ -1,9 +1,20 @@
-import React from 'react';
+import React from "react";
+import  "./icons/weixin.svg";
 
 
-const Icon = (props) => {
+interface IconProps {
+  name: string;
+}
 
-  return <div>Icon</div>;
+const Icon: React.FunctionComponent<IconProps> = (props) => {
+  console.log(props,'props');
+  
+  return (
+    <span>
+      <svg>
+        <use xlinkHref="#weixin"></use>
+      </svg>
+    </span>);
 };
 
 export default Icon;

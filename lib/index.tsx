@@ -7,7 +7,7 @@ const container = document.getElementById("root") as HTMLElement;
 const root = createRoot(container);
 root.render(
   <div>
-    <Icon></Icon>
+    <Icon name="wechat"></Icon>
     <Button></Button>
   </div>
 );

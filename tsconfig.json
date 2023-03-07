@@ -21,7 +21,10 @@
       //具体参考 https://devblogs.microsoft.com/typescript/announcing-typescript-4-4/#use-unknown-catch-variables
       "useUnknownInCatchVariables": false
     },
-    "include": [],
+    "include": [
+      "types/**/*",
+      "lib/**/*",
+    ],
     "exclude": [
         "node_modules",
         "build",
