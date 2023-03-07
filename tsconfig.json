@@ -1,0 +1,38 @@
+{
+    "compilerOptions": {
+      "lib": [
+        "es6",
+        "dom",
+      ],
+      "target": "esnext",
+      "module": "esnext",
+    //   "moduleResolution": "node",
+      "importHelpers": true,
+      "jsx": "react",
+      "esModuleInterop": true,
+      "sourceMap": true,
+      "baseUrl": ".",
+      "strict": true,
+    //   "types": ["node"],
+      "noImplicitAny": false,
+      "noImplicitThis": false,
+      "skipLibCheck": true, //忽略库的默认声明文件的类型检查
+      "allowSyntheticDefaultImports": true,
+      //在ts4.4中，新增了将catch中的参数从any改为了unknown，还原到以前的配置
+      //具体参考 https://devblogs.microsoft.com/typescript/announcing-typescript-4-4/#use-unknown-catch-variables
+      "useUnknownInCatchVariables": false
+    },
+    "include": [],
+    "exclude": [
+        "node_modules",
+        "build",
+        "dist",
+        "scripts",
+        "acceptance-tests",
+        "webpack",
+        "jest",
+        "*.js"
+    ]
+}
+
+  
