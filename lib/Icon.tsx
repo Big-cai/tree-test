@@ -1,18 +1,17 @@
 import React from "react";
 import  "./importIcons";
 import  './icon.scss';
+import classes from "./classes";
 
-
-interface IconProps {
+interface IconProps extends React.SVGAttributes<SVGElement> {
   name: string;
-  onClick: (e) => void
 }
 
 const Icon: React.FunctionComponent<IconProps> = (props) => {
-  console.log(props,'props');
+  const {className,...restProps} = props
   
   return (
-      <svg className="lui-icon" onClick={props.onClick}>
+      <svg className={classes('lui-icon',className)}   {...restProps}>
         <use xlinkHref={`#${props.name}`}></use>
       </svg>
   );
