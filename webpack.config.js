@@ -26,34 +26,16 @@ module.exports = {
             {
                 test: /\.svg$/,
                 loader: 'svg-sprite-loader',
+            },
+            {
+                test: /\.s([ac]ss)$/,
+                use: ['style-loader','css-loader','sass-loader']
             }
         ]
     },
-    // plugins: [
-    //     new HtmlWebpackPlugin({
-    //         title: 'LUI',
-    //         template: 'index.html'
-    //     })
-    // ],
-
-    // 告诉webpack 这是外部的
-    // externals: {
-    //     react: {
-    //         commonjs: 'react',
-    //         commonjs2: 'react',
-    //         amd: 'react',
-    //         root: 'React'
-    //     },
-    //     'react-dom': {
-    //         commonjs: 'react-dom',
-    //         commonjs2: 'react-dom',
-    //         amd: 'react-dom',
-    //         root: 'ReactDOM'
-    //     }
-    // },
     // 服务器配置
     devServer: {
-        open: true, // 自动打开浏览器
+        // open: true, // 自动打开浏览器
         port: 8080, // 热替换 外网访问
     }
 }
