@@ -1,5 +1,6 @@
 import React from "react";
-import  "./icons/weixin.svg";
+import  "./importIcons";
+
 
 
 interface IconProps {
@@ -12,7 +13,7 @@ const Icon: React.FunctionComponent<IconProps> = (props) => {
   return (
     <span>
       <svg>
-        <use xlinkHref="#weixin"></use>
+        <use xlinkHref={`#${props.name}`}></use>
       </svg>
     </span>);
 };
