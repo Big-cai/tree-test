@@ -1,17 +1,19 @@
 import React from "react";
-import  "./importIcons";
+import  "../importIcons";
 import  './icon.scss';
-import classes from "./classes";
+import {scopedClassMaker} from "../classes";
 
 interface IconProps extends React.SVGAttributes<SVGElement> {
   name: string;
 }
 
+const scopedClass = scopedClassMaker('lui-icon')
+
+
 const Icon: React.FunctionComponent<IconProps> = (props) => {
-  const {className,...restProps} = props
-  
+  const {className,...restProps} = props  
   return (
-      <svg className={classes('lui-icon',className)}   {...restProps}>
+      <svg className={scopedClass('mask',className)}   {...restProps}>
         <use xlinkHref={`#${props.name}`}></use>
       </svg>
   );

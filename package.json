@@ -45,8 +45,11 @@
     "webpack-dev-server": "^3.11.2"
   },
   "dependencies": {
+    "file-loader": "^6.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-router": "^6.8.2",
+    "react-router-dom": "5.2.0",
     "svg-sprite-loader": "^6.0.11",
     "typescript": "3"
   }

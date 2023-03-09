@@ -7,11 +7,11 @@ module.exports = {
         index: './lib/index.tsx'
     },
     resolve: {  //文件扩展名需要添加ts
-        extensions: ['.ts','.tsx', '.js','.jsx'],
+        extensions: ['.ts', '.tsx', '.js', '.jsx'],
     },
     // 输出
     output: {
-        path: path.resolve(__dirname,'dist/lib'),
+        path: path.resolve(__dirname, 'dist/lib'),
         library: 'LUI', // 库的名字
         libraryTarget: 'umd',
     },
@@ -19,7 +19,7 @@ module.exports = {
     // 输入
     module: {
         rules: [
-           { 
+            {
                 test: /\.tsx?$/,
                 loader: 'awesome-typescript-loader'
             },
@@ -29,8 +29,13 @@ module.exports = {
             },
             {
                 test: /\.s([ac]ss)$/,
-                use: ['style-loader','css-loader','sass-loader']
-            }
+                use: ['style-loader', 'css-loader', 'sass-loader']
+            },
+            {
+                test: /\.png$/,
+                loader: 'file-loader'
+            },
+
         ]
     },
     // 服务器配置
