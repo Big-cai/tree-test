@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ReactDOM from "react-dom";
 import "./dialog.scss";
 import { scopedClassMaker } from "../classes";
 
@@ -20,8 +21,9 @@ const Diaog: React.FunctionComponent<DiaogProps> = (props) => {
     props.onClose(e)
   };
 
-  return (
-    <>
+const element = ()=> {
+  return(
+    <div>
       {props.visible ? <div className={scopedClass("mask")} onClick={cancle}></div>:null}
       <div
         id="divs"
@@ -50,7 +52,11 @@ const Diaog: React.FunctionComponent<DiaogProps> = (props) => {
           )}
         </footer>
       </div>
-    </>
+    </div>
+  )
+}
+  return (
+    ReactDOM.createPortal(element(),document.body)
   )
 };
 
